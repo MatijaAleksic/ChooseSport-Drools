@@ -2,8 +2,11 @@ package app.enums;
 
 public enum KrvniPritisakStatus {
 	
-	HIPOTENZIJA,
-	HIPERTENZIJA,
-	NORMALAN
+	NORMALAN,
+	PREDHIPERTENZIJA,
+	HIPERTENZIJA_1,
+	HIPERTENZIJA_2,
+	
+	NA
 
 }

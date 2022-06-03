@@ -3,7 +3,7 @@
 	<name>sbnz-drools-spring-app</name>
 	<comment></comment>
 	<projects>
-		<project>drools-spring-kjar</project>
+		<project>snbz-drools-spring-kjar</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

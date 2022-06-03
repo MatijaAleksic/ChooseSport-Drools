@@ -1,6 +1,6 @@
 INSERT INTO admins (id, email,password) VALUES (999, 'admin@gmail.com','admin');
 
-INSERT INTO bmi (id, tezina,visina,godine,status) VALUES (5,123,123,123,1);
+INSERT INTO bmi (id, tezina,visina,godine,status, score) VALUES (5,123,123,123,1, 0);
 INSERT INTO krvni_pritisak(id, gornji_pritisak,donji_pritisak,status) VALUES (8,100,100,1);
 
 INSERT INTO clients (id, email, password, bmi_id, kp_id) VALUES (2,'client@gmail.com', 'client', 5,8);

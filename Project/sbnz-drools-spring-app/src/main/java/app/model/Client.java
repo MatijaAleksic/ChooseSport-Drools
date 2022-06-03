@@ -35,4 +35,27 @@ public class Client extends User{
 		super(email, password);
 	}
 
+	public BMI getBmi() {
+		return bmi;
+	}
+
+	public void setBmi(BMI bmi) {
+		this.bmi = bmi;
+	}
+
+	public KrvniPritisak getPritisak() {
+		return pritisak;
+	}
+
+	public void setPritisak(KrvniPritisak pritisak) {
+		this.pritisak = pritisak;
+	}
+
+	public Set<Notification> getNotifications() {
+		return notifications;
+	}
+
+	public void setNotifications(Set<Notification> notifications) {
+		this.notifications = notifications;
+	}
 }

@@ -20,26 +20,24 @@ public class Application {
 
 	public static void main(String[] args) {
 		
-		SpringApplication.run(Application.class, args);
+//		SpringApplication.run(Application.class, args);
 		
-		
-//		ApplicationContext ctx = SpringApplication.run(SampleApp.class, args);
+		ApplicationContext ctx = SpringApplication.run(Application.class, args);
+		String[] beanNames = ctx.getBeanDefinitionNames();
+		Arrays.sort(beanNames);
 
-//		String[] beanNames = ctx.getBeanDefinitionNames();
-//		Arrays.sort(beanNames);
-//
-//		StringBuilder sb = new StringBuilder("Application beans:\n");
-//		for (String beanName : beanNames) {
-//			sb.append(beanName + "\n");
-//		}
-//		log.info(sb.toString());
+		StringBuilder sb = new StringBuilder("Application beans:\n");
+		for (String beanName : beanNames) {
+			sb.append(beanName + "\n");
+		}
+		log.info(sb.toString());
 	}
 
 	@Bean
 	public KieContainer kieContainer() {
 		KieServices ks = KieServices.Factory.get();
 		KieContainer kContainer = ks
-				.newKieContainer(ks.newReleaseId("sbnz", "sbnz-drools-spring-kjar", "0.0.1-SNAPSHOT"));
+				.newKieContainer(ks.newReleaseId("sbnz.integracija", "sbnz-drools-spring-kjar", "0.0.1-SNAPSHOT"));
 		KieScanner kScanner = ks.newKieScanner(kContainer);
 		kScanner.start(10_000);
 		return kContainer;
