@@ -8,6 +8,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import app.enums.TimskaPodkategorija;
 
 @Entity
@@ -15,13 +17,14 @@ import app.enums.TimskaPodkategorija;
 public class TimskaKategorija {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private TimskaPodkategorija podkategorija;
 	
 	@ManyToOne
 	@JoinColumn(name = "tim_sport_id", nullable = true)
+	@JsonIgnore
 	private TimskiSport sport;
 	
 

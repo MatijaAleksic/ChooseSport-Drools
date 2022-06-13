@@ -6,6 +6,7 @@ import java.util.Arrays;
 import org.kie.api.KieServices;
 import org.kie.api.builder.KieScanner;
 import org.kie.api.runtime.KieContainer;
+import org.kie.api.runtime.KieSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -23,15 +24,22 @@ public class Application {
 //		SpringApplication.run(Application.class, args);
 		
 		ApplicationContext ctx = SpringApplication.run(Application.class, args);
-		String[] beanNames = ctx.getBeanDefinitionNames();
-		Arrays.sort(beanNames);
-
-		StringBuilder sb = new StringBuilder("Application beans:\n");
-		for (String beanName : beanNames) {
-			sb.append(beanName + "\n");
-		}
-		log.info(sb.toString());
+//		String[] beanNames = ctx.getBeanDefinitionNames();
+//		Arrays.sort(beanNames);
+//
+//		StringBuilder sb = new StringBuilder("Application beans:\n");
+//		for (String beanName : beanNames) {
+//			sb.append(beanName + "\n");
+//		}
+//		log.info(sb.toString());
 	}
+	
+	@Bean
+	public KieServices kieServices() {
+		KieServices ks = KieServices.Factory.get();
+		return ks;
+	}
+	
 
 	@Bean
 	public KieContainer kieContainer() {
@@ -41,6 +49,13 @@ public class Application {
 		KieScanner kScanner = ks.newKieScanner(kContainer);
 		kScanner.start(10_000);
 		return kContainer;
+	}
+	
+	@Bean
+	public KieSession kieSession() {
+		
+		KieSession ks = kieContainer().newKieSession();
+		return ks;
 	}
 	/*
 	 * KieServices ks = KieServices.Factory.get(); KieContainer kContainer =

@@ -5,7 +5,7 @@ import app.enums.BMIStatus;
 
 rule "Set BMI Status - EKSTREMNA_PODGOJENOST"
     when
-        $bmi: BMI(status == BMIStatus.NA  && score < 16.0)
+        $bmi: BMI(status == BMIStatus.NA  && score < 16.0 && score > 0)
     then
     	$bmi.setStatus(BMIStatus.EKSTREMNA_PODGOJENOST);
         update($bmi);

@@ -13,7 +13,7 @@ import app.enums.BMIStatus;
 public class BMI {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private int tezina;

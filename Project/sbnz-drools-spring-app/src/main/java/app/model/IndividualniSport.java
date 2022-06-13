@@ -4,8 +4,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import app.enums.CenaSporta;
 
@@ -13,7 +16,8 @@ import app.enums.CenaSporta;
 @Table(name = "individualni_sport")
 public class IndividualniSport extends Sport {
 	
-	@OneToMany(mappedBy = "sport")
+
+	@OneToMany(mappedBy = "sport", fetch = FetchType.LAZY)
 	private Set<IndividualnaKategorija> kategorije = new HashSet<>();
 	
 	public IndividualniSport() {
