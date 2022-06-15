@@ -4,6 +4,7 @@ import java.time.Instant;
 import java.util.ArrayDeque;
 import java.util.Date;
 import java.util.Deque;
+import java.util.List;
 
 import org.kie.api.KieBase;
 import org.kie.api.KieBaseConfiguration;
@@ -20,8 +21,10 @@ import org.springframework.stereotype.Service;
 import app.dto.HeartBeatDTO;
 import app.dto.PreporukaTreningaDTO;
 import app.dto.QuerySportDTO;
+import app.dto.RegisterDTO;
 import app.enums.HeartBeatStatus;
 import app.exceptions.UserNotFoundExcpetion;
+import app.model.Administrator;
 import app.model.BMI;
 import app.model.Client;
 import app.model.KrvniPritisak;
@@ -45,6 +48,16 @@ public class ClientService {
 		this.repository = client_repository;
 		this.kieService = kieService;
 		this.kieSession = kieSession;
+	}
+	
+	public List<Client> findAll() throws UserNotFoundExcpetion {
+		List<Client> existing_clients =  repository.findAll();
+		
+		if(existing_clients == null) {
+			throw new UserNotFoundExcpetion("No clients found!");
+		}
+		
+		return existing_clients;
 	}
 	
 	public Client findById(Long userId) throws UserNotFoundExcpetion {
@@ -149,61 +162,15 @@ public class ClientService {
 		
 		return hb;
 	}
-
 	
-	
-	
-//	public ResponseEntity<?> getBMIforUser(Long userId) {
-//		Client existing_client =  repository.findByBMIId(userId);
-//		
-//		if(existing_client == null) {
-//			return new ResponseEntity<>("Year of birth cannot be in the future", HttpStatus.BAD_REQUEST);
-//		}
-//		
-//		return new ResponseEntity<>(existing_client.getBmi(), HttpStatus.OK);
-//	}
-	
-
-	
-//	
-//    $sport : IndividualniSport() from accumulate(
-//	IndividualniSport($temp : this) from $sports,
-//	init(IndividualniSport odabrani_sport = null; int skor = 0),
-//	        	action(
-//			int skor = $temp.calculateMatchScore($preciznost,$izdrzljivost,$tehnika,$brzina,$snaga);
-//			
-//			if($max == skor){
-//				odabrani_sport = $temp;
-//			}
-//			),
-//	result($temp)
-//);
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	//	    init( Person minp = null; Date mind = new Date(); ),
-//action( if( $cd.compareTo( mind ) < 0 ){
-//            minp = $child;
-//            mind = $cd;
-//        } ),
-//result( minp ) )
-
-
-//    $sport : IndividualniSport() from accumulate(
-//IndividualniSport($temp : this) from $sports,
-//init(IndividualniSport odabrani_sport = null; int skor = 0),
-//    	action(
-//	int skor = $temp.calculateMatchScore($preciznost,$izdrzljivost,$tehnika,$brzina,$snaga);
-//	
-//	if($max == skor){
-//		odabrani_sport = $temp;
-//	}
-//	),
-//result($temp)
+public Client create(RegisterDTO registerDTO) throws UserNotFoundExcpetion {
+		
+		Client existingAdmin = this.repository.findByEmail(registerDTO.getEmail());
+		if(existingAdmin != null) {
+			throw new UserNotFoundExcpetion("User with given email alredy exists");
+		}
+		Client newAdmin = new Client(registerDTO.getEmail(), registerDTO.getPassword());
+		return this.repository.save(newAdmin);
+		
+	}
 }

@@ -13,6 +13,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
 public class Application {
@@ -32,6 +34,20 @@ public class Application {
 //			sb.append(beanName + "\n");
 //		}
 //		log.info(sb.toString());
+	}
+	
+	@Bean
+	public WebMvcConfigurer corsConfigurer() {
+		return new WebMvcConfigurer() {
+			@Override
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/**")
+                .allowedOrigins("http://localhost:4200")
+                .allowedMethods("GET", "POST", "DELETE", "PUT")
+                .allowedHeaders("X-Requested-With", "Origin", "Content-Type", "Accept", "Access-Control-Allow-Origin")
+                .allowCredentials(true);
+			}
+		};
 	}
 	
 	@Bean

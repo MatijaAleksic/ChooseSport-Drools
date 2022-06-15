@@ -9,6 +9,8 @@ import app.model.Client;
 public interface ClientRepository extends JpaRepository<Client, Long>{
 	
 	Client findByBmiId(Long id);
+	
+	Client findByEmail(String email);
 }
 
 

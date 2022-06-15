@@ -1,8 +1,8 @@
 INSERT INTO bmi (tezina,visina,godine,status, score) VALUES (75,184,24,1, 0);
 INSERT INTO krvni_pritisak(gornji_pritisak,donji_pritisak,status) VALUES (100,100,2);
 
-INSERT INTO clients (id, email, password, bmi_id, kp_id) VALUES (1, 'client@gmail.com', 'client', 1,1);
-INSERT INTO admins (id, email,password) VALUES (1, 'admin@gmail.com','admin');
+INSERT INTO clients (id, email, password, bmi_id, kp_id, chosen_sport_id, last_bmi_check, last_satisfaction_check) VALUES (9999, 'client@gmail.com', 'client', 1,1, null, null, null);
+INSERT INTO admins (id, email,password) VALUES (9998, 'admin@gmail.com','admin');
 
 INSERT INTO notifications(text, user_id) VALUES ('hello',2);
 

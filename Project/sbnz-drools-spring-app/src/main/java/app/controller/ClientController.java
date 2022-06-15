@@ -35,7 +35,7 @@ import app.service.KrvniPritisakService;
 import app.service.TimskiSportService;
 
 @RestController
-@RequestMapping(value = "/client")
+@RequestMapping(value = "/client", consumes="application/json")
 public class ClientController {
 	private static Logger log = LoggerFactory.getLogger(ClientController.class);
 
@@ -159,40 +159,3 @@ public class ClientController {
 		return result;
 	}
 }
-
-
-
-//
-//rule "oldest child"
-//	when
-//	  Person($pn: name, $pd: dateOfBirth, $children: children)
-//	  Person($ocn: name) from accumulate(
-//	    $child: Person( $cd: dateOfBirth) from $children,        
-//	    init( Person minp = null; Date mind = new Date(); ),
-//	    action( if( $cd.compareTo( mind ) < 0 ){
-//	                minp = $child;
-//	                mind = $cd;
-//	            } ),
-//	    result( minp ) )
-//	then
-//	  System.out.println( $pn + "'s oldest child is " + $ocn );
-//	end
-//
-//$o: Order($lines: orderLines)
-//
-//Number(intValue >= 10) from accumulate(
-//    OrderLine(item.salePrice > 20.00, $q: quantity) from $lines,
-//    init(int count = 0;),
-//    action(count += $q;),
-//    reverse(count -= $q;),
-//    result(count)
-//)
-//
-//
-//
-//
-//$podkat: timPodkategorija, $sports : odabrani_tip, tipSporta == TipSporta.TIMSKI  && odabrani_tip != null && timskiSports != null && cena == null);  
-//
-//$sport : TimskiSport(kategorije.size() > 0) from $sports;
-//
-//forall($kategorija : TimskaKategorija($sporta : sport, podkategorija != $podkat) from $sport.kategorije);
