@@ -1,0 +1,36 @@
+<div class="notification-wrapper" > 
+    <!-- You can put an icon from Material Design icon or Fontawesome -->
+   <div class="notification-btn" (click)="openNotification(!showNotification)">
+       <mat-icon matBadge="{{notifications.length}}" matBadgeColor="warn">
+           <span class="material-symbols-outlined">
+               circle_notifications
+           </span>
+       </mat-icon>
+     <!-- <span class="mdi mdi-bell"></span> -->
+   </div>
+   <div *ngIf="showNotification" class="notification-content">
+       <div class="notifications" *ngFor="let notification of notifications">
+
+            <div class="card" style="word-wrap: break-word;">
+                
+                <div class="d-flex" style="font-size: 10px; height:35px; width:200px;">
+                    {{notification.date | date:'MMM d, y, HH:mm:ss'}}
+                </div>
+                <mat-divider></mat-divider>
+                <div class="d-flex">
+                    {{notification.text}}
+                </div>
+                <!-- <mat-divider></mat-divider> -->
+
+            </div>
+
+            <!-- <ol>
+                <li (click)="answer(questionList[currentQuestion], option)">
+                    <div class="card">
+                        {{option.text}}
+                    </div>
+                </li>
+            </ol> -->
+        </div>
+   </div>
+</div>

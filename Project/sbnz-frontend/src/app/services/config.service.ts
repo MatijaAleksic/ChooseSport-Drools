@@ -19,7 +19,9 @@ export class ConfigService {
   private _heart_beat_url = this._client_url + '/heart_beat';
 
 
-
+  get user_url(): string {
+    return this._user_url;
+  }
   get login_url(): string {
     return this._login_url;
   }

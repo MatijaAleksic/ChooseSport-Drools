@@ -1,7 +1,6 @@
 package app.dto;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import app.enums.CenaSporta;
@@ -10,7 +9,6 @@ import app.enums.IndividualnaPodkategorija;
 import app.enums.TimskaPodkategorija;
 import app.enums.TipSporta;
 import app.model.EkstremniSport;
-import app.model.IndividualnaKategorija;
 import app.model.IndividualniSport;
 import app.model.Sport;
 import app.model.TimskiSport;
@@ -229,6 +227,23 @@ public class QuerySportDTO {
 
 	public void setUserId(Long userId) {
 		this.userId = userId;
+	}
+	
+	public void printQuert() {
+		System.out.println("Cena : " + this.getCena());
+		System.out.println("TipSporta : " + this.getTipSporta());
+
+		System.out.println("EksPodkategorija : " + this.getEksPodkategorija());
+		System.out.println("IndPodkategorija : " + this.getIndPodkategorija());
+		System.out.println("TimPodkategorija : " + this.getTimPodkategorija());
+
+		
+		System.out.println("brzina : " + this.brzina);
+		System.out.println("izdrzljivost : " + this.izdrzljivost);
+		System.out.println("preciznost : " + this.preciznost);
+		System.out.println("snaga : " + this.snaga);
+		System.out.println("tehnika : " + this.tehnika);
+
 	}
 	
 	

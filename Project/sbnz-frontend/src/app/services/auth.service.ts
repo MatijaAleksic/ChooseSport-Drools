@@ -63,12 +63,20 @@ export class AuthService {
     return this.userInfo.user.id;
   }
 
+  getCurrentUserRole(){
+    return this.userInfo.role;
+  }
+
   setCurrentUserBmi(bmi){
     this.userInfo.user.bmi = bmi
   }
 
   setCurrentUserKrvniPritisak(kp){
     this.userInfo.user.pritisak = kp
+  }
+
+  setCurrentUser(user){
+    this.userInfo.user = user
   }
 
 }

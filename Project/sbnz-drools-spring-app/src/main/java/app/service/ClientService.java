@@ -1,8 +1,6 @@
 package app.service;
 
-import java.time.Instant;
 import java.util.ArrayDeque;
-import java.util.Date;
 import java.util.Deque;
 import java.util.List;
 
@@ -10,7 +8,6 @@ import org.kie.api.KieBase;
 import org.kie.api.KieBaseConfiguration;
 import org.kie.api.KieServices;
 import org.kie.api.conf.EventProcessingOption;
-import org.kie.api.internal.utils.KieService;
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.slf4j.Logger;
@@ -24,7 +21,6 @@ import app.dto.QuerySportDTO;
 import app.dto.RegisterDTO;
 import app.enums.HeartBeatStatus;
 import app.exceptions.UserNotFoundExcpetion;
-import app.model.Administrator;
 import app.model.BMI;
 import app.model.Client;
 import app.model.KrvniPritisak;

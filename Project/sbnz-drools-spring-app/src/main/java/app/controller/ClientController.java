@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import app.dto.BMIDto;
@@ -26,7 +25,6 @@ import app.enums.KrvniPritisakStatus;
 import app.model.BMI;
 import app.model.Client;
 import app.model.KrvniPritisak;
-import app.model.User;
 import app.service.BMIService;
 import app.service.ClientService;
 import app.service.EkstremniSportService;
@@ -101,6 +99,8 @@ public class ClientController {
 	@PostMapping(value="/sport_query", produces = "application/json")
 	public QuerySportDTO calculateSport(@RequestBody QuerySportDTO dto) throws Exception {
 
+		dto.printQuert();
+		
 		dto.setIndividualniSportovi(this.individualniSportService.findAll());
 		dto.setTimskiSports(this.timskiSportService.findAll());
 		dto.setEkstremniSports(this.ekstremniSportService.findAll());
@@ -108,7 +108,8 @@ public class ClientController {
 		QuerySportDTO query_result = this.clientService.getClassifiedSport(dto);
 		
 		Client client = this.clientService.findById(dto.getUserId());
-		
+		client.setSport(query_result.getOdabraniSport());
+		this.clientService.save(client);
 		
 		return query_result;
 		

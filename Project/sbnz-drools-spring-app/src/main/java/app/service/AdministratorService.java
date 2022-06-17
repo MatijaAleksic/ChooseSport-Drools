@@ -30,6 +30,16 @@ public class AdministratorService {
 		return found;
 	}
 	
+	public Administrator findById(Long userId) throws UserNotFoundExcpetion {
+		Administrator existing_admin=  administratorRepository.findById(userId).orElse(null);
+		
+		if(existing_admin == null) {
+			throw new UserNotFoundExcpetion("User by given id: " + userId.toString() + "");
+		}
+		
+		return existing_admin;
+	}
+	
 	public Administrator create(RegisterDTO registerDTO) throws UserNotFoundExcpetion {
 		
 		Administrator existingAdmin = this.administratorRepository.findByEmail(registerDTO.getEmail());

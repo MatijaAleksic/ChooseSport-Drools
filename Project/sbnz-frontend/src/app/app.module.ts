@@ -19,6 +19,8 @@ import { RegisterComponent } from './register/register.component';
 import { BmiComponent } from './bmi/bmi.component';
 import { KrvniPritisakComponent } from './krvni-pritisak/krvni-pritisak.component';
 import { SportQueryComponent } from './sport-query/sport-query.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { SportQueryComponent } from './sport-query/sport-query.component';
     RegisterComponent,
     BmiComponent,
     KrvniPritisakComponent,
-    SportQueryComponent
+    SportQueryComponent,
+    NotificationsComponent
     
   ],
   imports: [
@@ -40,8 +43,7 @@ import { SportQueryComponent } from './sport-query/sport-query.component';
     FormsModule,
     ReactiveFormsModule,
     NoopAnimationsModule,
-    HttpClientModule,
-    
+    HttpClientModule,    
   ],
   providers: [
     AuthService,

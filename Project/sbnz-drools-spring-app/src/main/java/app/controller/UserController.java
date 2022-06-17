@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import app.dto.LoginDTO;
 import app.dto.LoginResponseDTO;
 import app.dto.RegisterDTO;
+import app.dto.UserIdDTO;
 import app.model.Administrator;
 import app.model.Client;
 import app.model.User;
@@ -86,7 +87,36 @@ public class UserController {
             return new ResponseEntity<>("Registeration unsuccesfull!", HttpStatus.NOT_ACCEPTABLE);
         }
 	}
+	
+	@PostMapping(produces = "application/json")
+	public ResponseEntity<?> getUser(@RequestBody UserIdDTO dto) throws Exception {
 
+		User found = null;
+				
+		if(dto.getRole().equals("client")) {
+			Client existingClient = this.clientService.findById(dto.getId());
+			if(existingClient != null) {
+				found = existingClient;
+			}
+		}
+		
+		if(dto.getRole().equals("admin")) {
+			Administrator existingAdmin = this.administratorService.findById(dto.getId());
+
+			if(existingAdmin != null) {
+				found = existingAdmin;
+			}
+		}
+		
+		if(found == null) {
+			return new ResponseEntity<>("No user found!",  HttpStatus.NOT_FOUND);
+		}
+	
+		return new ResponseEntity<>(found, HttpStatus.OK);
+	}
+
+
+	
 	
 	
 

@@ -1,165 +1,128 @@
 {
     "questions": [{
-            "questionText": "Which of the following does TypeScript use to specify types?",
+            "questionType" : "sportType",
+            "questionText": "Which type of sport would you like to take on?",
             "options": [{
-                    "text": ":",
-                    "correct": true
+                    "text": "Individual sports",
+                    "value" : 0,
+                    "explanation": "Indiviudal sports are sports that you play individualy..."
                 },
                 {
-                    "text": ";"
+                    "text": "Team Sports",
+                    "value" : 1,
+                    "explanation": "Team sports are sports that you play in a team..."
                 },
                 {
-                    "text": "!"
-                },
-                {
-                    "text": "&"
+                    "text": "Exstream Sports",
+                    "value" : 2,
+                    "explanation": "Exstream sports are sports that are crazy..."
                 }
-            ],
-            "explanation": "TS uses a colon (:) to separate the property name from the property type"
+            ]
         },
         {
-            "questionText": "Which of the following is NOT a type used in TypeScript?",
+            "questionType" : "sportPrice",
+            "questionText": "How much money are you willing to spend on training it?",
             "options": [{
-                    "text": "number"
+                    "value" : 0,
+                    "text": "You are not in a good financial position and you would like to be recomended cheap sports"
                 },
                 {
-                    "text": "string"
+                    "value" : 1,
+                    "text": "You would like that your recomendation includes some little more expensive sports"
                 },
                 {
-                    "text": "boolean"
-                },
-                {
-                    "text": "enum",
-                    "correct": true
+                    "value" : 2,
+                    "text": "You would like that you recomendations include even the most expensive sports"
                 }
-            ],
-            "explanation": "enum is not used as a type in TypeScript"
+            ]
         },
         {
-            "questionText": "How can we specify properties and methods for an object in TypeScript?",
-            "options": [{
-                    "text": "Use classes."
+            "questionType" : "sportCategory",
+            "questionText": "What type of individual sport would you like to train?",
+            "options": [
+                {
+                    "text": "Individual sports on dry land.",
+                    "value" : 0
                 },
                 {
-                    "text": "Use interfaces.",
-                    "correct": true
+                    "text": "Individual sports in water.",
+                    "value" : 1
                 },
                 {
-                    "text": "Use enums."
+                    "text": "Individual sports on snow.",
+                    "value" : 2
                 },
                 {
-                    "text": "Use async/await."
+                    "text": "Individual sports on ice.",
+                    "value" : 3
                 }
-            ],
-            "explanation": "interfaces are typically used to list the properties and methods for an object"
+            ]
         },
         {
-            "questionText": "How else can Array<number> be written in TypeScript?",
-            "options": [{
-                    "text": "@number"
+            "questionType" : "sportCategory",
+            "questionText": "What type of team sport would you like to train?",
+            "options": [
+                {
+                    "text": "Team sport - Invasion games.",
+                    "value" : 0
                 },
                 {
-                    "text": "number[]",
-                    "correct": true
+                    "text": "Team sport - Net games.",
+                    "value" : 1
                 },
                 {
-                    "text": "number!"
-                },
-                {
-                    "text": "number?"
+                    "text": "Team sport - Field games.",
+                    "value" : 2
                 }
-            ],
-            "explanation": "number[] is another way of writing Array<number> in TypeScript"
+            ]
         },
         {
-            "questionText": "In which of these does a class take parameters?",
-            "options": [{
-                    "text": "constructor",
-                    "correct": true
+            "questionType" : "sportCategory",
+            "questionText": "What type of extream sport would you like to train?",
+            "options": [
+                {
+                    "text": "Extream sport - Climbing",
+                    "value" : 0
                 },
                 {
-                    "text": "destructor"
+                    "text": "Extream sport - Descending race",
+                    "value" : 1
                 },
                 {
-                    "text": "import"
+                    "text": "Extream sport - Flying",
+                    "value" : 2
                 },
                 {
-                    "text": "subscribe"
+                    "text": "Extream sport - Diving",
+                    "value" : 3
                 }
-            ],
-            "explanation": "a constructor is used by a class to take in parameters"
+            ]
+        },
+
+        {
+            "questionType" : "precision",
+            "input" : "precision",
+            "questionText": "How would you describe your precision(0-100)"
         },
         {
-            "questionText": "Which is NOT an access modifier?",
-            "options": [{
-                    "text": "private"
-                },
-                {
-                    "text": "protected"
-                },
-                {
-                    "text": "public"
-                },
-                {
-                    "text": "async",
-                    "correct": true
-                }
-            ],
-            "explanation": "async is not used as an access modifier type in TypeScript"
+            "questionType" : "endurance",
+            "input" : "endurance",
+            "questionText": "How would you describe your endurance(0-100)"
         },
         {
-            "questionText": "Which keyword allows us to share information between files in TypeScript?",
-            "options": [{
-                    "text": "import"
-                },
-                {
-                    "text": "export",
-                    "correct": true
-                },
-                {
-                    "text": "async"
-                },
-                {
-                    "text": "constructor"
-                }
-            ],
-            "explanation": "the export keyword allows for the information to be transmitted between files"
+            "questionType" : "technique",
+            "input" : "technique",
+            "questionText": "How would you describe your technique(0-100)"
         },
         {
-            "questionText": "Which is an array method to generate a new array based on a condition?",
-            "options": [{
-                    "text": "filter",
-                    "correct": true
-                },
-                {
-                    "text": "map"
-                },
-                {
-                    "text": "async"
-                },
-                {
-                    "text": "enum"
-                }
-            ],
-            "explanation": "filter is a method used to conditionally create a new array"
+            "questionType" : "speed",
+            "input" : "speed",
+            "questionText": "How would you describe your speed(0-100)"
         },
         {
-            "questionText": "How is a property accessible within a class?",
-            "options": [{
-                    "text": "Using this.propertyName",
-                    "correct": true
-                },
-                {
-                    "text": "Accessors"
-                },
-                {
-                    "text": "Destructuring"
-                },
-                {
-                    "text": "Arrow function"
-                }
-            ],
-            "explanation": "this.propertyName is the way to access a specific property within a class"
+            "questionType" : "strength",
+            "input" : "strength",
+            "questionText": "How would you describe your strength(0-100)"
         }
     ]
 }

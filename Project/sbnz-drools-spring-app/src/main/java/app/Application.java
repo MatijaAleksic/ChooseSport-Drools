@@ -1,8 +1,5 @@
 package app;
 
-
-import java.util.Arrays;
-
 import org.kie.api.KieServices;
 import org.kie.api.builder.KieScanner;
 import org.kie.api.runtime.KieContainer;
@@ -19,7 +16,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @SpringBootApplication
 public class Application {
 
-	private static Logger log = LoggerFactory.getLogger(Application.class);
+//	private static Logger log = LoggerFactory.getLogger(Application.class);
 
 	public static void main(String[] args) {
 		

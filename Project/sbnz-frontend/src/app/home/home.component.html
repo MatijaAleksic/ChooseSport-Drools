@@ -1,1 +1,110 @@
-<p> HOMEPAGE</p>
+<div id="sve" class="row" *ngIf="isUserClient()">
+    <div id="bmi" class="col">
+        <div class="card">
+            <h2>
+                BMI STATS
+            </h2>
+            <mat-divider></mat-divider>
+
+            <div class="d-flex">
+                Tezina : {{tezina}} kg
+            </div>
+            <div class="d-flex">
+                Visina : {{visina}} cm
+            </div>
+            <div class="d-flex">
+                Godine : {{godine}}
+            </div>
+            <mat-divider></mat-divider>
+            <div class="d-flex">
+                Status : {{bmiStatus}}
+            </div>
+        </div>
+    
+    </div>
+
+
+    <div id="sport" class="col">
+
+        <div class="d-flex flex-column">
+            <div id ="imeSporta" class="p-2"> <h1 style="text-align: center; background-color: white;" >{{imeSporta}}</h1></div>
+            <div class="p-2" *ngIf="hasChoosenSport()">
+                <div class="row">
+                    <div id="atributi" class="col">
+                        <div class="card">
+                            <h2>
+                                Sposobnosti
+                            </h2>
+                            <mat-divider></mat-divider>
+                            <div class="d-flex">
+                                preciznost: {{preciznost}}
+                            </div>
+                            <div class="d-flex">
+                                izdrzljivost: {{izdrzljivost}}
+                            </div>
+                            <div class="d-flex">
+                                tehnika: {{tehnika}}
+                            </div>
+                            <div class="d-flex">
+                                brzina: {{brzina}}
+                            </div>
+                            <div class="d-flex">
+                                snaga: {{snaga}}
+                            </div>
+
+                        </div>
+                    </div>
+        
+                    <div id="ime" class="col">
+
+                        <div class="card">
+                            <h2>
+                                Atributi
+                            </h2>
+                            <mat-divider></mat-divider>
+        
+                            <div class="d-flex">
+                                Vezbe snage: {{vezbeSnage}}
+                            </div>
+                            <div class="d-flex">
+                                Vezbe kardio: {{vezbeKardio}}
+                            </div>
+                            <mat-divider></mat-divider>
+                            <div class="d-flex">
+                                cena: {{cenaSporta}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+
+
+
+    <div id="krvni-pritisak" class="col">
+        <div class="card">
+            <h4>
+                KRVNI PRITISAK STATS
+            </h4>
+            <mat-divider></mat-divider>
+            <div class="d-flex">
+                Godrnji Pritisak : {{godnjiPritisak}}
+            </div>
+            <div class="d-flex">
+                Donji Pritisak : {{donjiPritisak}}
+            </div>
+            <mat-divider></mat-divider>
+            <div class="d-flex">
+                Status : {{pritisakStatus}}
+            </div>
+
+            <button id="cepbtn" type="button" class="btn btn-danger btn-circle btn-xl" (click)="startTraining()">Start Training   </button>
+        </div>
+
+        </div>
+
+</div>

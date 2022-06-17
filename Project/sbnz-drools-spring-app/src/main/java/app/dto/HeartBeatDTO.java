@@ -2,16 +2,11 @@ package app.dto;
 
 
 import java.time.LocalDateTime;
-import java.util.Date;
-
-import org.kie.api.definition.type.Expires;
 import org.kie.api.definition.type.Role;
 
 import app.enums.BMIStatus;
 import app.enums.HeartBeatStatus;
 import app.enums.KrvniPritisakStatus;
-import app.model.Client;
-import app.model.User;
 
 @Role(Role.Type.EVENT)
 //@Expires("30m")

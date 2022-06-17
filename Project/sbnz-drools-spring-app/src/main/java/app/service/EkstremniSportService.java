@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import app.model.EkstremniSport;
-import app.model.Sport;
 import app.repository.EkstremniSportRepository;
 
 @Service

@@ -1,7 +1,5 @@
 package app.dto;
 
-import java.time.LocalDateTime;
-
 import app.model.User;
 
 public class LoginResponseDTO {

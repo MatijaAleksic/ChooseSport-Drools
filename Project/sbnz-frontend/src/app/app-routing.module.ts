@@ -12,7 +12,7 @@ import { SportQueryComponent } from './sport-query/sport-query.component';
 const routes: Routes = [
   {
     path: '',
-    component: SportQueryComponent,
+    component: HomeComponent,
     pathMatch: 'full'
   },
   {
