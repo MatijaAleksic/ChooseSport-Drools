@@ -20,6 +20,7 @@ import { BmiComponent } from './bmi/bmi.component';
 import { KrvniPritisakComponent } from './krvni-pritisak/krvni-pritisak.component';
 import { SportQueryComponent } from './sport-query/sport-query.component';
 import { NotificationsComponent } from './notifications/notifications.component';
+import { HeartbeatComponent } from './heartbeat/heartbeat.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { NotificationsComponent } from './notifications/notifications.component'
     BmiComponent,
     KrvniPritisakComponent,
     SportQueryComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    HeartbeatComponent
     
   ],
   imports: [

@@ -22,16 +22,20 @@ public class HeartBeatDTO {
 	private int lowerLimit;
 	private KrvniPritisakStatus krvniPritisak;
 	private BMIStatus bmiStatus;
-	
+
 	private HeartBeatStatus heartBeatStatus;
 	
-	public HeartBeatDTO() {	}
+	
+	private String text = null;
+	
+	public HeartBeatDTO() {this.text = null;	}
 	
 	public HeartBeatDTO(int heartRatePerMinute, Long userId, LocalDateTime startTime) {
 		super();
 		this.heartRatePerMinute = heartRatePerMinute;
 		this.userId = userId;
 		this.startTime = startTime;
+		this.text = null;
 	}
 
 	public int getHeartRatePerMinute() {
@@ -116,13 +120,18 @@ public class HeartBeatDTO {
 		this.timeNow = timeNow;
 	}
 
+	public String getText() {
+		return text;
+	}
+
+	public void setText(String text) {
+		this.text = text;
+	}
+
 	public void calculateUpperLowerLimit() {
 		int temp = 220 - this.userAge;
 		this.upperLimit = (int) (temp * 0.8);
 		this.lowerLimit = (int) (temp * 0.6);			
 	}
-	
-	
-	
 	
 }

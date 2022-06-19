@@ -4,10 +4,10 @@ INSERT INTO krvni_pritisak(gornji_pritisak,donji_pritisak,status) VALUES (100,10
 INSERT INTO clients (id, email, password, bmi_id, kp_id, chosen_sport_id, last_bmi_check, last_satisfaction_check) VALUES (9999, 'client@gmail.com', 'client', 1,1, null, null, null);
 INSERT INTO admins (id, email,password) VALUES (9998, 'admin@gmail.com','admin');
 
-INSERT INTO notifications(date, text, user_id) VALUES ('2022-06-17 19:51:00', 'text1',9999);
-INSERT INTO notifications(date, text, user_id) VALUES ('2022-06-17 19:52:00', 'text2',9999);
-INSERT INTO notifications(date, text, user_id) VALUES ('2022-06-17 19:53:00', 'text3',9999);
-INSERT INTO notifications(date, text, user_id) VALUES ('2022-06-17 19:54:00', 'text4',9999);
+INSERT INTO notifications(date, text, user_id) VALUES ('2022-06-18 13:51:00', 'text1',9999);
+INSERT INTO notifications(date, text, user_id) VALUES ('2022-06-18 13:52:00', 'text2',9999);
+INSERT INTO notifications(date, text, user_id) VALUES ('2022-06-18 13:53:00', 'text3',9999);
+INSERT INTO notifications(date, text, user_id) VALUES ('2022-06-18 19:54:00', 'text4',9999);
 INSERT INTO notifications(date, text, user_id) VALUES ('2022-06-17 19:55:00', 'text5',9999);
 INSERT INTO notifications(date, text, user_id) VALUES ('2022-06-17 19:56:00', 'text6',9999);
 INSERT INTO notifications(date, text, user_id) VALUES ('2022-06-17 19:57:00', 'text7',9999);

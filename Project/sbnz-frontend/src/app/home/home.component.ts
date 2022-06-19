@@ -45,10 +45,19 @@ export class HomeComponent implements OnInit {
           .subscribe(data => {
             this.authService.setCurrentUser(data);
 
-            this.tezina = data.bmi.tezina;
-            this.visina = data.bmi.tezina;
-            this.godine = data.bmi.godine;
-            this.bmiStatus = data.bmi.status;
+            if(data.bmi){
+              this.tezina = data.bmi.tezina;
+              this.visina = data.bmi.tezina;
+              this.godine = data.bmi.godine;
+              this.bmiStatus = data.bmi.status;
+            }
+            else{
+              this.tezina = 0;
+              this.visina = 0;
+              this.godine = 0;
+              this.bmiStatus = "NA";
+            }
+
 
             if(data.sport)
             {
@@ -78,9 +87,16 @@ export class HomeComponent implements OnInit {
               this.cenaSporta = "NA";
             }
 
-            this.godnjiPritisak = data.pritisak.gornji_pritisak;
-            this.donjiPritisak = data.pritisak.donji_pritisak;
-            this.pritisakStatus = data.pritisak.status;
+            if(data.pritisak){
+              this.godnjiPritisak = data.pritisak.gornji_pritisak;
+              this.donjiPritisak = data.pritisak.donji_pritisak;
+              this.pritisakStatus = data.pritisak.status;
+            }
+            else{
+              this.godnjiPritisak = 0;
+              this.donjiPritisak = 0;
+              this.pritisakStatus = "NA";
+            }
           },
             error => {
               console.log(error);

@@ -28,7 +28,7 @@ public class NotificationsController {
 	@PostMapping(produces = "application/json")
 	public ResponseEntity<?> getNotificationsForUser(@RequestBody UserIdDTO dto) throws Exception {
 
-		List<Notification> notifikacije = this.notificationService.findByUserId(dto.getId());
+		List<Notification> notifikacije = this.notificationService.findByUserIdAndDateGreaterThan(dto.getId());
 		
 		if(notifikacije == null) {
 			return new ResponseEntity<>("No notifications found for user!",  HttpStatus.NOT_FOUND);

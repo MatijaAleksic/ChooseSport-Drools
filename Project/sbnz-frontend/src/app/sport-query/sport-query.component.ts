@@ -164,6 +164,7 @@ export class SportQueryComponent implements OnInit {
       Number(this.speed), Number(this.strength), this.sportType, this.sportPrice, this.sportCategory)
         .subscribe(data => {
           this.router.navigate(['/']);
+        
         },
           error => {
             console.log(error);

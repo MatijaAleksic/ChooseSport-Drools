@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BmiComponent } from './bmi/bmi.component';
+import { HeartbeatComponent } from './heartbeat/heartbeat.component';
 
 import { HomeComponent } from './home/home.component';
 import { KrvniPritisakComponent } from './krvni-pritisak/krvni-pritisak.component';
@@ -12,7 +13,7 @@ import { SportQueryComponent } from './sport-query/sport-query.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component:  HomeComponent,
     pathMatch: 'full'
   },
   {
@@ -35,18 +36,10 @@ const routes: Routes = [
     path: 'sport-query',
     component: SportQueryComponent,
   },
-  // {
-  //   path: 'user-table',
-  //   component: UserTableComponent,
-  // },
-  // {
-  //   path: 'add-user',
-  //   component: AddUserComponent,
-  // },
-  // {
-  //   path: 'device-table',
-  //   component: DeviceTableComponent,
-  // },
+  {
+    path: 'heartbeat',
+    component: HeartbeatComponent,
+  },
 ];
 
 @NgModule({

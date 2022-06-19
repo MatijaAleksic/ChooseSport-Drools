@@ -17,6 +17,7 @@ export class ConfigService {
   private _krvni_pritisak_url = this._client_url + '/krvni_pritisak';
   private _sport_query_url = this._client_url + '/sport_query';
   private _heart_beat_url = this._client_url + '/heart_beat';
+  private _notifications_url = this._api_url + '/notifications'
 
 
   get user_url(): string {
@@ -42,6 +43,9 @@ export class ConfigService {
   }
   get heart_beat_url(): string{
     return this._heart_beat_url;
+  }
+  get notifications_url(): string{
+    return this._notifications_url;
   }
 
 }

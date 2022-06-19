@@ -2,6 +2,7 @@ package app.controller;
 
 import org.springframework.http.HttpStatus;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 import org.slf4j.Logger;
@@ -25,11 +26,13 @@ import app.enums.KrvniPritisakStatus;
 import app.model.BMI;
 import app.model.Client;
 import app.model.KrvniPritisak;
+import app.model.Notification;
 import app.service.BMIService;
 import app.service.ClientService;
 import app.service.EkstremniSportService;
 import app.service.IndividualniSportService;
 import app.service.KrvniPritisakService;
+import app.service.NotificationService;
 import app.service.TimskiSportService;
 
 @RestController
@@ -44,10 +47,13 @@ public class ClientController {
 	private IndividualniSportService individualniSportService;
 	private TimskiSportService timskiSportService;
 	private EkstremniSportService ekstremniSportService;
+	
+	private NotificationService notificationService;
 
 	@Autowired
 	public ClientController(ClientService clientService, BMIService bmiService, KrvniPritisakService krvniPritisakService,
-			IndividualniSportService individualniSportService,TimskiSportService timskiSportService, EkstremniSportService ekstremniSportService) {
+			IndividualniSportService individualniSportService,TimskiSportService timskiSportService, EkstremniSportService ekstremniSportService,
+			NotificationService notificationService) {
 		this.clientService = clientService;
 		this.bmiService = bmiService;
 		this.krvniPritisakService = krvniPritisakService;
@@ -55,24 +61,38 @@ public class ClientController {
 		this.individualniSportService = individualniSportService;
 		this.timskiSportService = timskiSportService;
 		this.ekstremniSportService = ekstremniSportService;
+		
+		this.notificationService = notificationService;
 	}
 	
 	@PostMapping(value="/bmi", produces = "application/json")
 	public BMI calculateBMI(@RequestBody BMIDto dto) throws Exception {
 		
-		BMI existing_bmi = clientService.getBMIforUser(dto.getUser_id());
-		existing_bmi.setStatus(BMIStatus.NA);
-		existing_bmi.setScore(0);
+		Client temp = this.clientService.findById(dto.getUser_id());
+		BMI bmi_temp = null;
 		
-		existing_bmi.setVisina(dto.getVisina());
-		existing_bmi.setTezina(dto.getTezina());
-		existing_bmi.setGodine(dto.getGodine());
+		if(temp.getBmi() == null) {
+			bmi_temp = new BMI();
+		}
+		else {
+			bmi_temp = temp.getBmi();
+		}
 		
-		log.debug("BMI request received for: " + existing_bmi);
-
-		BMI updated_bmi = this.clientService.getClassifiedBMI(existing_bmi);
+		bmi_temp.setStatus(BMIStatus.NA);
+		bmi_temp.setScore(0);
 		
-		this.bmiService.save(updated_bmi);
+		bmi_temp.setVisina(dto.getVisina());
+		bmi_temp.setTezina(dto.getTezina());
+		bmi_temp.setGodine(dto.getGodine());
+		
+		BMI updated_bmi = this.clientService.getClassifiedBMI(bmi_temp);
+		
+		BMI saved_bmi = this.bmiService.save(updated_bmi);
+		
+		if(temp.getBmi() == null) {
+			temp.setBmi(saved_bmi);
+			this.clientService.save(temp);
+		}
 		
 		return updated_bmi;
 	}
@@ -80,20 +100,32 @@ public class ClientController {
 	@PostMapping(value="/krvni_pritisak", produces = "application/json")
 	public KrvniPritisak calculateKrvniPritisak(@RequestBody KrvniPritisakDTO dto) throws Exception {
 		
-		KrvniPritisak existing_kp = clientService.getKrvniPritisakforUser(dto.getUser_id());
+		Client temp = this.clientService.findById(dto.getUser_id());
+		KrvniPritisak kp_temp = null;
 		
-		existing_kp.setStatus(KrvniPritisakStatus.NA);
-		
-		existing_kp.setDonji_pritisak(dto.getDonji_pritisak());
-		existing_kp.setGornji_pritisak(dto.getGornji_pritisak());
+		if(temp.getPritisak() == null) {
+			kp_temp = new KrvniPritisak();
+		}
+		else {
+			kp_temp = temp.getPritisak();
+		}
 
-		log.debug("Krvni Pritisak request received for: " + existing_kp);
+		kp_temp.setStatus(KrvniPritisakStatus.NA);
+		
+		kp_temp.setDonji_pritisak(dto.getDonji_pritisak());
+		kp_temp.setGornji_pritisak(dto.getGornji_pritisak());
 
-		KrvniPritisak updated_bmi = this.clientService.getClassifiedKrvniPritisak(existing_kp);
+		KrvniPritisak updated_kp = this.clientService.getClassifiedKrvniPritisak(kp_temp);
 		
-		this.krvniPritisakService.save(updated_bmi);
+	
+		KrvniPritisak saved_kp = this.krvniPritisakService.save(updated_kp);
 		
-		return updated_bmi;
+		if(temp.getPritisak() == null) {
+			temp.setPritisak(saved_kp);
+			this.clientService.save(temp);
+		}
+		
+		return updated_kp;
 	}
 	
 	@PostMapping(value="/sport_query", produces = "application/json")
@@ -129,25 +161,9 @@ public class ClientController {
 		
 	}
 	
-	@GetMapping(value="/test/{name}", produces = "application/json")
-	public ResponseEntity<?> calculateSport(@PathVariable String name) throws Exception {
-		
-		if(name.equals("individualni")) {
-			return new ResponseEntity<>(this.individualniSportService.findAll(), HttpStatus.OK);
-		}
-		else if(name.equals("timski")) {
-			return new ResponseEntity<>(this.timskiSportService.findAll(), HttpStatus.OK);
-		}
-		else if(name.equals("ekstremni")) {
-			return new ResponseEntity<>(this.ekstremniSportService.findAll(), HttpStatus.OK);
-		}
-		else {
-			return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-		}
-	}
 	
 	@PostMapping(value="/heart_beat", produces = "application/json")
-	public HeartBeatDTO cepHeartBeat(@RequestBody HeartBeatDTO heartBeat) throws Exception {
+	public void cepHeartBeat(@RequestBody HeartBeatDTO heartBeat) throws Exception {
 		
 		Client user = this.clientService.findById(heartBeat.getUserId());
 		heartBeat.setBmiStatus(user.getBmi().getStatus());
@@ -157,6 +173,16 @@ public class ClientController {
 		heartBeat.setTimeNow(LocalDateTime.now());
 		
 		HeartBeatDTO result = this.clientService.getClassifiedHeartRate(heartBeat);
-		return result;
+		
+		if(result.getText() != null) {
+			Notification novaNotifikacija = new Notification();
+			
+			novaNotifikacija.setDate(LocalDateTime.now());
+			novaNotifikacija.setText(result.getText());
+			novaNotifikacija.setUser(user);
+			
+			this.notificationService.create(novaNotifikacija);
+		}
+		
 	}
 }

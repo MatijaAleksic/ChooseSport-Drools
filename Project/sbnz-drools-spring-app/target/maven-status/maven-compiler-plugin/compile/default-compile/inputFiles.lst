@@ -20,8 +20,10 @@ D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\sr
 D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\model\Client.java
 D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\controller\ClientController.java
 D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\model\User.java
+D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\service\NotificationService.java
 D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\controller\test.java
 D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\Application.java
+D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\repository\NotificationRepository.java
 D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\enums\CenaSporta.java
 D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\service\KrvniPritisakService.java
 D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\repository\TimskiSportRepository.java
@@ -44,8 +46,10 @@ D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\sr
 D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\dto\HeartBeatDTO.java
 D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\enums\EkstremnaPodkategorija.java
 D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\service\TimskiSportService.java
+D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\dto\UserIdDTO.java
 D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\model\EkstremnaKategorija.java
 D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\dto\PreporukaTreningaDTO.java
+D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\controller\NotificationsController.java
 D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\repository\ClientRepository.java
 D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\service\AdministratorService.java
 D:\Files\Documents\Projekti\ChooseSport-Drools\Project\sbnz-drools-spring-app\src\main\java\app\controller\UserController.java

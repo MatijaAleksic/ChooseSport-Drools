@@ -1,4 +1,5 @@
 app\service\EkstremniSportService.class
+app\controller\NotificationsController.class
 app\repository\SportRepository.class
 app\dto\RegisterDTO.class
 app\controller\UserController.class
@@ -11,6 +12,7 @@ app\repository\ClientRepository.class
 app\service\TimskiSportService.class
 app\model\Administrator.class
 app\repository\AdministratorRepository.class
+app\dto\UserIdDTO.class
 app\exceptions\UserNotFoundExcpetion.class
 app\repository\IndividualniSportRepository.class
 app\controller\test.class
@@ -37,9 +39,12 @@ app\controller\ClientController.class
 app\Application.class
 app\repository\BMIRepository.class
 app\dto\PreporukaTreningaDTO.class
+app\repository\NotificationRepository.class
 config\WebConfig.class
 app\model\Sport.class
 app\model\IndividualnaKategorija.class
+app\service\NotificationService.class
+app\Application$1.class
 app\service\BMIService.class
 app\dto\KrvniPritisakDTO.class
 app\model\KrvniPritisak.class

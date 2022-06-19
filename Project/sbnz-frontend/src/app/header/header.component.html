@@ -6,7 +6,7 @@
                 <span>Home</span>
             </button>
 
-            <button *ngIf="hasSignedIn() && !isUserAdmin()" mat-button mat-ripple routerLink="/bmi">
+            <!-- <button *ngIf="hasSignedIn() && !isUserAdmin()" mat-button mat-ripple routerLink="/bmi">
                 <span>Claculate BMI</span>
             </button>
 
@@ -16,7 +16,7 @@
 
             <button *ngIf="hasSignedIn() && !isUserAdmin()" mat-button mat-ripple routerLink="/sport-query">
                 <span>Choose Sport</span>
-            </button>
+            </button> -->
 
         </div>
     </div>
@@ -29,7 +29,7 @@
 
             <!-- <i class="fas fa-bell"></i> -->
 
-            <app-notifications *ngIf="!hasSignedIn()"></app-notifications>
+            <app-notifications *ngIf="hasSignedIn()"></app-notifications>
 
             <button *ngIf="!hasSignedIn()" mat-button mat-ripple routerLink="/login">
                 <span>Login</span>

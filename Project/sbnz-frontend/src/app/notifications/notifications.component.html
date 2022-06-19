@@ -1,7 +1,9 @@
 <div class="notification-wrapper" > 
     <!-- You can put an icon from Material Design icon or Fontawesome -->
    <div class="notification-btn" (click)="openNotification(!showNotification)">
-       <mat-icon matBadge="{{notifications.length}}" matBadgeColor="warn">
+       <!-- <mat-icon *ngIf="notifications != null" matBadge="{{notifications.length}}" matBadgeColor="warn"> -->
+        <mat-icon *ngIf="notifications" matBadge="{{all_notifications - read_notifications}}" matBadgeColor="warn">
+
            <span class="material-symbols-outlined">
                circle_notifications
            </span>
@@ -9,7 +11,7 @@
      <!-- <span class="mdi mdi-bell"></span> -->
    </div>
    <div *ngIf="showNotification" class="notification-content">
-       <div class="notifications" *ngFor="let notification of notifications">
+       <div class="notifications" *ngFor="let notification of notifications.slice().reverse()">
 
             <div class="card" style="word-wrap: break-word;">
                 

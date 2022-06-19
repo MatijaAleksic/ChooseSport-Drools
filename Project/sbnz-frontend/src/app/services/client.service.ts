@@ -35,7 +35,6 @@ export class ClientService {
 
     return this.apiService.post(this.config.bmi_url, JSON.stringify(body), this.normalHeader)
       .pipe(map((res) => {
-        console.log('Bmi claculated');
         console.log(res);
       }));
   }
@@ -51,7 +50,6 @@ export class ClientService {
 
     return this.apiService.post(this.config.krvni_pritisak_url, JSON.stringify(body), this.normalHeader)
       .pipe(map((res) => {
-        console.log('Krvni pritisak claculated');
         console.log(res);
       }));
   }
@@ -100,11 +98,9 @@ export class ClientService {
         'cena' : cena
       };} 
 
-    console.log(body);
 
     return this.apiService.post(this.config.sport_query_url, JSON.stringify(body), this.normalHeader)
       .pipe(map((res) => {
-        console.log('Sport query claculated');
         console.log(res);
       }));
 
@@ -117,6 +113,33 @@ export class ClientService {
     };
 
     return this.apiService.post(this.config.user_url, JSON.stringify(body), this.normalHeader);
+  }
+
+  get_notifications(currentUserId) {
+
+    const body = {
+      'id' : currentUserId,
+    };
+
+    return this.apiService.post(this.config.notifications_url, JSON.stringify(body), this.normalHeader)
+      .pipe(map((res) => {
+        return res;
+      }));
+  }
+
+
+  send_heartbeat(currentUserId, heartbeat, startTime, status){
+    const body = {
+      'heartRatePerMinute' : heartbeat,
+      'userId' : currentUserId,
+      'startTime' : startTime,
+      'heartBeatStatus' : status,
+    };
+
+    return this.apiService.post(this.config.heart_beat_url, JSON.stringify(body), this.normalHeader)
+      .pipe(map((res) => {
+        return res;
+      }));
   }
 
 }

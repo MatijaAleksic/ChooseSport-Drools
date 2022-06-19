@@ -1,0 +1,43 @@
+<div class="card">
+
+    <div class="d-flex flex-column">
+        <div class="p-2">
+            <h4>
+                Fitbit Device
+            </h4>
+        </div>
+
+        <div class="p-2">
+            <mat-divider></mat-divider>
+            <div class="d-flex">
+                Timer: {{seconds}} sec
+            </div>
+        </div>
+
+        <div class="p-2">
+            <mat-divider></mat-divider>
+            <div class="d-flex">
+                HeartBeat: {{beatPerMinute}} per minute(index: {{index}})
+            </div>
+        </div>
+
+        <div class="p-2">
+            <mat-divider></mat-divider>
+            <div class="d-flex flex-row">
+                <div class="p-2">
+                    <button id="increase" type="button" class="btn btn-primary"  (click)="decrease()" style="width:50px;"> - </button>
+                </div>
+                <div class="p-2">
+                    <button id="decrease" type="button" class="btn btn-primary" (click)="increase()" style="width:50px;"> +   </button>
+                </div>
+                
+              </div>
+        </div>
+
+        <div class="p-2">
+            <mat-divider></mat-divider>
+                <button id="stop" type="button" class="btn btn-danger" (click)="stop()" >STOP   </button>
+        </div>
+      </div>
+
+</div>
