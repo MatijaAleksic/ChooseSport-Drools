@@ -14,7 +14,7 @@ INSERT INTO notifications(date, text, user_id) VALUES ('2022-06-17 19:57:00', 't
 INSERT INTO notifications(date, text, user_id) VALUES ('2022-06-17 19:58:00', 'text8',9999);
 INSERT INTO notifications(date, text, user_id) VALUES ('2022-06-17 19:59:00', 'text9',9999);
 
-INSERT INTO individualni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (1,"Plivanje",          1, 	67, 60, 15, 70, 54, 3, 2);
+INSERT INTO individualni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (1,"Plivanje",          0, 	67, 60, 15, 70, 54, 3, 2);
 INSERT INTO individualni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (2,"Atletika",  		0, 	78, 84, 7, 60, 65, 3, 2);
 INSERT INTO individualni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (3,"Macevanje", 		1, 	85, 13, 74, 25, 82, 3, 2);
 INSERT INTO individualni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (4,"Streljarstvo", 		2, 	0, 12, 94, 15, 76, 3, 2);
@@ -35,7 +35,7 @@ INSERT INTO individualni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, s
 INSERT INTO individualni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (19,"Gimnastika", 		0, 	42, 83, 75, 64, 89, 3, 2);
 INSERT INTO individualni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (20,"Klizanje", 		0, 	65, 32, 53, 25, 72, 3, 2);
 INSERT INTO individualni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (21,"Biciklizam", 		1, 	87, 82, 5, 78, 23, 3, 2);
-INSERT INTO individualni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (22,"Skijanje", 		2, 	71, 82, 58, 25, 69, 3, 2);
+INSERT INTO individualni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (22,"Skijanje", 		0, 	71, 82, 58, 25, 69, 3, 2);
 INSERT INTO individualni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (23,"Bilijar", 			0, 	6, 22, 94, 26, 85, 3, 2);
 INSERT INTO individualni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (24,"Pikado", 			0, 	8, 24, 96, 21, 75, 3, 2);
 INSERT INTO individualni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (25,"Kuglanje", 		1, 	22, 19, 89, 32, 89, 3, 2);
@@ -54,8 +54,8 @@ INSERT INTO timski_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, 
 INSERT INTO timski_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (36,"Ragbi", 				0, 		76, 78, 35, 89, 46, 3, 2);
 INSERT INTO timski_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (37,"Rukomet", 			0, 		64, 32, 73, 79, 43, 3, 2);
 INSERT INTO timski_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (38,"Vaterpolo", 			1, 		25, 94, 67, 93, 57, 3, 2);
-INSERT INTO timski_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (39,"Cricket", 			2, 		32, 12, 62, 58, 72, 3, 2);
-INSERT INTO timski_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (40,"Baseball", 			1, 		65, 7, 45, 25, 27, 3, 2);
+INSERT INTO timski_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (39,"Cricket", 			1, 		32, 12, 62, 58, 72, 3, 2);
+INSERT INTO timski_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (40,"Baseball", 			0, 		65, 7, 45, 25, 27, 3, 2);
 INSERT INTO timski_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (41,"Polo", 				2, 		32, 25, 69, 36, 34, 3, 2);
 INSERT INTO timski_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (42,"Double Tenis", 		2, 		74, 78, 82, 72, 67, 3, 2);
 INSERT INTO timski_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (43,"Double Stoni Tenis", 1, 		65, 23, 75, 35, 82, 3, 2);
@@ -63,14 +63,14 @@ INSERT INTO timski_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, 
 
 INSERT INTO ekstremni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (44,"Mount Biking", 	1, 		73, 41, 27, 34, 65, 3, 2);
 INSERT INTO ekstremni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (45,"Rock Climbing", 	1, 		10, 85, 25, 87, 28, 3, 2);
-INSERT INTO ekstremni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (46,"Base Jumping", 	2, 		0, 25, 15, 35, 25, 3, 2);
+INSERT INTO ekstremni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (46,"Base Jumping", 	0, 		0, 25, 15, 35, 25, 3, 2);
 INSERT INTO ekstremni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (47,"Bobsleigh", 		2, 		84, 21, 12, 15, 64, 3, 2);
 INSERT INTO ekstremni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (48,"Free solo", 		0, 		12, 95, 35, 93, 45, 3, 2);
 INSERT INTO ekstremni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (49,"Freestyle Skiing",2, 		64, 24, 31, 32, 84, 3, 2);
 INSERT INTO ekstremni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (50,"Paragliding", 	2, 		5, 38, 8, 31, 32, 3, 2);
 INSERT INTO ekstremni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (51,"Ice Climbing", 	1, 		7, 78, 23, 68, 56, 3, 2);
 INSERT INTO ekstremni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (52,"Parkour", 		0, 		54, 64, 47, 75, 64, 3, 2);
-INSERT INTO ekstremni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (53,"Scuba Diving", 	2, 		1, 64, 9, 15, 56, 3, 2);
+INSERT INTO ekstremni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (53,"Scuba Diving", 	0, 		1, 64, 9, 15, 56, 3, 2);
 INSERT INTO ekstremni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (54,"Ski Jumping", 	2, 		84, 74,23, 45, 73, 3, 2);
 INSERT INTO ekstremni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (55,"Skateboarding", 	1, 		25, 21, 12, 27, 82, 3, 2);
 INSERT INTO ekstremni_sport(id,ime, cena, brzina, izdrzljivost, preciznost, snaga, tehnika, vezbe_izdrzljivosti, vezbe_snage) VALUES (56,"Skydiving", 		2, 		5, 89, 7, 56, 36, 3, 2);
@@ -127,16 +127,24 @@ INSERT INTO timska_kategorija(podkategorija, tim_sport_id) VALUES (1,42);
 INSERT INTO timska_kategorija(podkategorija, tim_sport_id) VALUES (1,43);
 
 
-INSERT INTO ekstremna_kategorija(podkategorija, ekst_sport_id) VALUES (1,44);
 INSERT INTO ekstremna_kategorija(podkategorija, ekst_sport_id) VALUES (0,45);
-INSERT INTO ekstremna_kategorija(podkategorija, ekst_sport_id) VALUES (2,46);
-INSERT INTO ekstremna_kategorija(podkategorija, ekst_sport_id) VALUES (1,47);
-INSERT INTO ekstremna_kategorija(podkategorija, ekst_sport_id) VALUES (0,48);
-INSERT INTO ekstremna_kategorija(podkategorija, ekst_sport_id) VALUES (1,49);
-INSERT INTO ekstremna_kategorija(podkategorija, ekst_sport_id) VALUES (2,50);
 INSERT INTO ekstremna_kategorija(podkategorija, ekst_sport_id) VALUES (0,51);
 INSERT INTO ekstremna_kategorija(podkategorija, ekst_sport_id) VALUES (0,52);
+INSERT INTO ekstremna_kategorija(podkategorija, ekst_sport_id) VALUES (0,48);
+
+INSERT INTO ekstremna_kategorija(podkategorija, ekst_sport_id) VALUES (1,44);
+INSERT INTO ekstremna_kategorija(podkategorija, ekst_sport_id) VALUES (1,47);
+INSERT INTO ekstremna_kategorija(podkategorija, ekst_sport_id) VALUES (1,49);
+
+INSERT INTO ekstremna_kategorija(podkategorija, ekst_sport_id) VALUES (2,50);
+INSERT INTO ekstremna_kategorija(podkategorija, ekst_sport_id) VALUES (2,46);
+
 INSERT INTO ekstremna_kategorija(podkategorija, ekst_sport_id) VALUES (3,53);
+
+
+
+
+
 INSERT INTO ekstremna_kategorija(podkategorija, ekst_sport_id) VALUES (1,54);
 INSERT INTO ekstremna_kategorija(podkategorija, ekst_sport_id) VALUES (2,54);
 INSERT INTO ekstremna_kategorija(podkategorija, ekst_sport_id) VALUES (1,55);

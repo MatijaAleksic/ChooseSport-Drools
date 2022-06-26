@@ -27,15 +27,18 @@ export class NotificationsComponent implements OnInit {
   ngOnInit() {
     if(this.authService.userInfo != null){
       interval(3000).subscribe(() => {
-        this.clientService.get_notifications(this.authService.getCurrentUserId())
-          .subscribe(data => {
-            this.notifications = data;
-            this.all_notifications = this.notifications.length;
-            // this.router.navigate(['/']);
-          },
-            error => {
-              console.log(error);
-            });
+        
+        if(this.authService.userInfo != null){
+          this.clientService.get_notifications(this.authService.getCurrentUserId())
+            .subscribe(data => {
+              this.notifications = data;
+              this.all_notifications = this.notifications.length;
+              // this.router.navigate(['/']);
+            },
+              error => {
+                console.log(error);
+              });
+          }
       });
     }
   }

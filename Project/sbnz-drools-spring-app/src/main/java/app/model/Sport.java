@@ -58,7 +58,7 @@ public abstract class Sport {
 		this.vezbeIzdrzljivosti = vezbeIzdrzljivosti;
 	}
 	
-	public int calculateMatchScore(int preciznost,int izdrzljivost,int tehnika,int brzina,int snaga) {
+	public Double calculateMatchScore(int preciznost,int izdrzljivost,int tehnika,int brzina,int snaga) {
 
 		HashMap<String, Integer> abilities = new HashMap<String, Integer>();
 		abilities.put("preciznost", preciznost);
@@ -145,33 +145,36 @@ public abstract class Sport {
 //		}
 		
 
-		ArrayList<Integer> scores = new ArrayList<Integer>();
-	
+		ArrayList<Double> scores = new ArrayList<Double>();
+		
+		Double multiplier = 1.0;
 		for (String name: names) {
 			if(name == "preciznost") {
-				scores.add(Math.abs(preciznost - this.preciznost));
+				scores.add(Double.valueOf(Math.abs(preciznost - this.preciznost)) * multiplier);
 			}
 			else if(name == "izdrzljivost") {
-				scores.add(Math.abs(izdrzljivost - this.izdrzljivost));
+				scores.add(Double.valueOf(Math.abs(izdrzljivost - this.izdrzljivost)) * multiplier);
 			}
 			else if(name == "tehnika") {
-				scores.add(Math.abs(tehnika - this.tehnika));
+				scores.add(Double.valueOf(Math.abs(tehnika - this.tehnika)) * multiplier);
 			}
 			else if(name == "brzina") {
-				scores.add(Math.abs(brzina - this.brzina));
+				scores.add(Double.valueOf(Math.abs(brzina - this.brzina)) * multiplier);
 			}
 			else if(name == "snaga") {
-				scores.add(Math.abs(snaga - this.snaga));
+				scores.add(Double.valueOf(Math.abs(snaga - this.snaga)) * multiplier);
 			}
+			
+			multiplier = multiplier - 0.1;
         }
 		
-		Integer finalScore = 0;
-		for(Integer score : scores) {
+		Double finalScore = 0.0;
+		for(Double score : scores) {
 			finalScore += score;
 		}
 
 		//System.out.println(this.ime + " skor: " + (500 - finalScore));
-		Integer result = 500 - finalScore;
+		Double result = 500 - finalScore;
 		return result;
 
 	}

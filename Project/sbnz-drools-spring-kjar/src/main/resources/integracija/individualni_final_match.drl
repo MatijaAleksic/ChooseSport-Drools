@@ -9,7 +9,7 @@ import app.enums.CenaSporta;
 
 import java.util.List
 
-rule "Caluculate scores for INDIVIDUALNI sports "
+rule "Caluculate scores for INDIVIDUALNI sports"
 no-loop
     when                            
         $query: QuerySportDTO(
@@ -23,7 +23,7 @@ no-loop
 	        
 	        tipSporta == TipSporta.INDIVIDUALNI && indPodkategorija == null && cena == null && odabrani_tip != null);
 	        
-	    Number($max: intValue) from accumulate(
+	    Number($max: doubleValue) from accumulate(
 	    	IndividualniSport($current : this) from $sports,
 	    	max($current.calculateMatchScore($query.preciznost,$query.izdrzljivost,$query.tehnika,$query.brzina,$query.snaga))
 	    );

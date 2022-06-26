@@ -23,7 +23,7 @@ no-loop
 	        
 	        tipSporta == TipSporta.EKSTREMNI && eksPodkategorija == null && cena == null && odabrani_tip != null);
 	        
-	    Number($max: intValue) from accumulate(
+	    Number($max: doubleValue) from accumulate(
 	    	EkstremniSport($current : this) from $sports,
 	    	max($current.calculateMatchScore($query.preciznost,$query.izdrzljivost,$query.tehnika,$query.brzina,$query.snaga))
 	    );

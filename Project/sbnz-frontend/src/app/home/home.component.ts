@@ -64,7 +64,7 @@ export class HomeComponent implements OnInit {
               this.imeSporta = data.sport.ime;
 
               this.preciznost = data.sport.preciznost;
-              this.izdrzljivost = data.sport.izdrzljivostnost;
+              this.izdrzljivost = data.sport.izdrzljivost;
               this.tehnika = data.sport.tehnika;
               this.brzina = data.sport.brzina;
               this.snaga = data.sport.snaga;
